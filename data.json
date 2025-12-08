@@ -1,0 +1,218 @@
+{
+  "personal": {
+    "name": "Dicle Ceylan",
+    "title": "Software Engineering Intern Candidate • Software Developer • Privacy & AI Researcher",
+    "email": "ceylandiclee@gmail.com",
+    "location": "Istanbul, Turkey",
+    "linkedin": "https://linkedin.com/in/dicle-ceylan",
+    "github": "https://github.com/DicleCeylann",
+    "summary": "Software Engineering Intern with experience in developing scalable software solutions and automation tools. Proficient in Python, C++, SQL, and REST API design. Skilled in cloud platforms, automation, cyber security fundamentals, and privacy engineering (PLDP)."
+  },
+
+  "links": {
+    "linkedin": "https://linkedin.com/in/dicle-ceylan",
+    "github": "https://github.com/DicleCeylann",
+    "email": "mailto:ceylandiclee@gmail.com"
+  },
+
+  "experience": [
+    {
+      "role": "Part-Time Junior Officer — Software Development",
+      "company": "Turkish Airlines",
+      "location": "Istanbul, Turkey",
+      "date": "Sept 2025 – Present",
+      "details": [
+        "Supporting digital transformation and analytics initiatives within the International Relations & Alliances Directorate.",
+        "Developing internal software tools and automation pipelines.",
+        "Enhancing data-driven decision-making in codeshare planning, network evaluation, and market analytics."
+      ]
+    },
+    {
+      "role": "Undergraduate Research Assistant — Personalized Local Differential Privacy (PLDP)",
+      "company": "Koç University",
+      "location": "Istanbul, Turkey",
+      "date": "Jul 2025 – Present",
+      "details": [
+        "Conducting research on PLDP under Asst. Prof. Emre Gürsoy.",
+        "Developing algorithms, Python experiments, and benchmarking pipelines.",
+        "Co-authoring a manuscript submitted to ACM CODASPY 2026."
+      ]
+    },
+    {
+      "role": "Cybersecurity Trainee",
+      "company": "SiberVatan",
+      "location": "Remote",
+      "date": "2025 – Present",
+      "details": [
+        "Completed training in offensive security, network analysis, OSINT, and exploit fundamentals.",
+        "Participated in scenario-based cyber range exercises.",
+        "Strengthened secure software development practices."
+      ]
+    },
+    {
+      "role": "IT Intern",
+      "company": "VBT Software",
+      "location": "Remote",
+      "date": "Jun 2025 – Jul 2025",
+      "details": [
+        "Worked with SQL Server, C#, REST APIs, microservice architecture.",
+        "Designed internal dashboards and JWT-based auth workflows.",
+        "Contributed to backend system improvements and SDLC processes."
+      ]
+    },
+    {
+      "role": "AI Research Assistant",
+      "company": "Yildiz Technical University",
+      "location": "Istanbul, Turkey",
+      "date": "Oct 2023 – Jun 2024",
+      "details": [
+        "Developed anomaly detection pipelines with SHAP & LIME explainability.",
+        "Conducted ML research for real estate and structured datasets."
+      ]
+    },
+    {
+      "role": "Server (Seasonal)",
+      "company": "Vegas Diner & Restaurant",
+      "location": "Wildwood, New Jersey, USA",
+      "date": "Jun 2024 – Oct 2024",
+      "details": [
+        "Customer operations in a fast-paced hospitality environment."
+      ]
+    },
+    {
+      "role": "Project Assistant & Student Assistant",
+      "company": "Yildiz Technical University",
+      "location": "Istanbul, Turkey",
+      "date": "Oct 2023 – Jun 2024",
+      "details": [
+        "Supported departmental academic and administrative tasks."
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "school": "Yıldız Technical University",
+      "degree": "B.Sc. in Statistics",
+      "date": "2021 – 2026",
+      "gpa": "3.46 / 4.00 (Top 3%)",
+      "activities": ["IEEE Student Branch – Supervisor Board Member & Financial Director"]
+    },
+    {
+      "school": "Koç University",
+      "degree": "M.Sc. in Computer Science and Engineering",
+      "date": "Expected Start: Fall 2026",
+      "scholarship": "Full Scholarship"
+    }
+  ],
+
+  "certificates": [
+    {
+      "title": "Certified in Cybersecurity (CC) — ISC2",
+      "year": 2025
+    },
+    {
+      "title": "CC Domain Certificates (Security Principles, Incident Response, Access Control, Network Security, Security Operations)",
+      "year": 2025
+    },
+    {
+      "title": "Google Cybersecurity Certificate",
+      "year": 2025
+    },
+    {
+      "title": "McKinsey Forward Program",
+      "year": 2025
+    },
+    {
+      "title": "Game Theory — Stanford University",
+      "year": 2024
+    },
+    {
+      "title": "How Software Ate Finance — Stanford University",
+      "year": 2024
+    },
+    {
+      "title": "Data Science in Stratified Healthcare — University of Edinburgh",
+      "year": 2025
+    },
+    {
+      "title": "Foundations of Cybersecurity — Google",
+      "year": 2025
+    },
+    {
+      "title": "Play It Safe: Manage Security Risks — Google",
+      "year": 2025
+    }
+  ],
+
+  "skills": {
+    "languages": ["Python", "C++", "SQL", "R"],
+    "core": [
+      "Object-Oriented Programming (OOP)",
+      "Data Structures & Algorithms",
+      "Debugging",
+      "API Design & RESTful Services",
+      "Problem Solving",
+      "Version Control (Git/GitHub)"
+    ],
+    "tools": [
+      "SQL Server",
+      "Scikit-learn",
+      "Streamlit",
+      "PowerBI",
+      "PyQt6",
+      "Linux CLI",
+      "Docker"
+    ],
+    "focusAreas": [
+      "Software Engineering",
+      "Privacy Engineering",
+      "Local Differential Privacy (PLDP)",
+      "Explainable AI (SHAP, LIME)",
+      "Machine Learning Pipelines"
+    ]
+  },
+
+  "projects": [
+    {
+      "name": "PersonalizedLDP",
+      "org": "Koç University",
+      "date": "2025 – Present",
+      "details": [
+        "Developed a modular PLDP experimentation framework.",
+        "Implemented Norm-Sub/Mul/Cut post-processing and compared IVW vs SA.",
+        "Built reproducible benchmarking pipelines.",
+        "Co-authored research submitted to ACM CODASPY 2026."
+      ]
+    },
+    {
+      "name": "Decision-Support & Automation Tools",
+      "org": "Turkish Airlines",
+      "date": "2025 – Present",
+      "details": [
+        "O&D-PAIR Calculator for dataset merging & pair generation.",
+        "AHP–TOPSIS Scoring App with Excel export.",
+        "Wave Visualizator for OAG timeline visualization.",
+        "Automation scripts for market analysis."
+      ]
+    },
+    {
+      "name": "SecureIoT — Smart City Security Pipeline",
+      "org": "University Project",
+      "date": "2025",
+      "details": [
+        "Implemented AES encryption, anomaly detection, event-logging modules.",
+        "Simulated cyber-attack scenarios for resilience testing."
+      ]
+    },
+    {
+      "name": "XAI-Sec — Explainable Threat Detection",
+      "org": "University Project",
+      "date": "2025",
+      "details": [
+        "Applied SHAP & LIME to cybersecurity model behavior.",
+        "Built interpretable dashboards for security analysts."
+      ]
+    }
+  ]
+}
