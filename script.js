@@ -83,17 +83,35 @@ function updatePortfolioContent(data) {
   const timeline = document.getElementById('experience-timeline');
   if (timeline) {
     timeline.innerHTML = '';
-    data.experience.slice(0, 5).forEach(exp => {
+    
+    // Show all professional experiences (not just first 5)
+    const professionalExperiences = data.experience.filter(exp => 
+      !exp.type || exp.type !== 'Volunteer' && exp.type !== 'Membership' && exp.type !== 'Training Program'
+    );
+    
+    professionalExperiences.forEach(exp => {
       const item = document.createElement('article');
       item.className = 'timeline-item';
+      
+      // Add type badge if available
+      const typeBadge = exp.type ? `<span class="type-badge">${exp.type}</span>` : '';
+      
+      // Add skills if available
+      const skillsSection = exp.skills ? 
+        `<div class="skills-tags">
+          ${exp.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+        </div>` : '';
+      
       item.innerHTML = `
         <div class="timeline-meta">
           <span class="timeline-role">${exp.role}</span>
           <span class="timeline-company">${exp.company}</span>
           <span class="timeline-time">${exp.date}</span>
+          ${typeBadge}
         </div>
         <p><strong>${exp.location}</strong></p>
         <ul>${exp.details.map(d => `<li>${d}</li>`).join('')}</ul>
+        ${skillsSection}
       `;
       timeline.appendChild(item);
     });
@@ -115,6 +133,36 @@ function updatePortfolioContent(data) {
         </div>
       `;
       projects.appendChild(card);
+    });
+  }
+  
+  // Update leadership & volunteering
+  const leadership = document.getElementById('leadership-timeline');
+  if (leadership) {
+    leadership.innerHTML = '';
+    
+    // Show volunteer, membership and training experiences
+    const volunteerExperiences = data.experience.filter(exp => 
+      exp.type === 'Volunteer' || exp.type === 'Membership' || exp.type === 'Training Program'
+    );
+    
+    volunteerExperiences.forEach(exp => {
+      const item = document.createElement('article');
+      item.className = 'timeline-item';
+      
+      const typeBadge = `<span class="type-badge">${exp.type}</span>`;
+      
+      item.innerHTML = `
+        <div class="timeline-meta">
+          <span class="timeline-role">${exp.role}</span>
+          <span class="timeline-company">${exp.company}</span>
+          <span class="timeline-time">${exp.date}</span>
+          ${typeBadge}
+        </div>
+        <p><strong>${exp.location}</strong></p>
+        <ul>${exp.details.map(d => `<li>${d}</li>`).join('')}</ul>
+      `;
+      leadership.appendChild(item);
     });
   }
   

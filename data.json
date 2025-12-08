@@ -17,36 +17,29 @@
 
   "experience": [
     {
-      "role": "Part-Time Junior Officer — Software Development",
+      "role": "Junior Officer — Software Development",
       "company": "Turkish Airlines",
       "location": "Istanbul, Turkey",
-      "date": "Sept 2025 – Present",
+      "date": "Sep 2025 – Present",
+      "type": "Part-time",
       "details": [
-        "Supporting digital transformation and analytics initiatives within the International Relations & Alliances Directorate.",
+        "International Relations & Alliances Department / Agreements Performance Analysis Division",
+        "Supporting digital transformation and analytics initiatives.",
         "Developing internal software tools and automation pipelines.",
-        "Enhancing data-driven decision-making in codeshare planning, network evaluation, and market analytics."
+        "Enhancing data-driven decision-making in codeshare planning and market analytics."
       ]
     },
     {
-      "role": "Undergraduate Research Assistant — Personalized Local Differential Privacy (PLDP)",
+      "role": "Undergraduate Research Assistant",
       "company": "Koç University",
-      "location": "Istanbul, Turkey",
+      "location": "Istanbul, Turkey", 
       "date": "Jul 2025 – Present",
+      "type": "Internship",
+      "skills": ["Python", "Data Protection", "Local Differential Privacy", "Privacy-Preserving Data Analysis", "Academic Writing"],
       "details": [
-        "Conducting research on PLDP under Asst. Prof. Emre Gürsoy.",
+        "Conducting research on Personalized Local Differential Privacy (PLDP).",
         "Developing algorithms, Python experiments, and benchmarking pipelines.",
-        "Co-authoring a manuscript submitted to ACM CODASPY 2026."
-      ]
-    },
-    {
-      "role": "Cybersecurity Trainee",
-      "company": "SiberVatan",
-      "location": "Remote",
-      "date": "2025 – Present",
-      "details": [
-        "Completed training in offensive security, network analysis, OSINT, and exploit fundamentals.",
-        "Participated in scenario-based cyber range exercises.",
-        "Strengthened secure software development practices."
+        "Co-authoring manuscript for academic publication."
       ]
     },
     {
@@ -54,38 +47,113 @@
       "company": "VBT Software",
       "location": "Remote",
       "date": "Jun 2025 – Jul 2025",
+      "type": "Internship",
+      "skills": ["HTML", "SQL", "CSS", "Web Services API", "BMC Helix Dashboards", "Remedy Developer Studio"],
       "details": [
-        "Worked with SQL Server, C#, REST APIs, microservice architecture.",
-        "Designed internal dashboards and JWT-based auth workflows.",
-        "Contributed to backend system improvements and SDLC processes."
+        "Backend authentication structures, Redis based token management, and SQL Server database operations.",
+        "Design of data visualization dashboards, form configurations, and process automation within BMC Helix Dashboards and Remedy Developer Studio environments."
       ]
     },
     {
-      "role": "AI Research Assistant",
-      "company": "Yildiz Technical University",
-      "location": "Istanbul, Turkey",
-      "date": "Oct 2023 – Jun 2024",
-      "details": [
-        "Developed anomaly detection pipelines with SHAP & LIME explainability.",
-        "Conducted ML research for real estate and structured datasets."
-      ]
-    },
-    {
-      "role": "Server (Seasonal)",
-      "company": "Vegas Diner & Restaurant",
+      "role": "Server",
+      "company": "Vegas Diner & Restaurant", 
       "location": "Wildwood, New Jersey, USA",
       "date": "Jun 2024 – Oct 2024",
+      "type": "Full-time",
       "details": [
-        "Customer operations in a fast-paced hospitality environment."
+        "Customer service operations in a fast-paced hospitality environment."
       ]
     },
     {
-      "role": "Project Assistant & Student Assistant",
-      "company": "Yildiz Technical University",
+      "role": "Project Assistant",
+      "company": "Yıldız Technical University",
+      "location": "Istanbul, Turkey",
+      "date": "Oct 2023 – Jun 2024", 
+      "type": "Part-time",
+      "details": [
+        "Supported departmental academic and administrative projects."
+      ]
+    },
+    {
+      "role": "Student Assistant",
+      "company": "Yıldız Technical University",
       "location": "Istanbul, Turkey",
       "date": "Oct 2023 – Jun 2024",
+      "type": "Part-time", 
       "details": [
-        "Supported departmental academic and administrative tasks."
+        "Assisted with departmental operations and student services."
+      ]
+    },
+    {
+      "role": "Member of The Supervisory Board",
+      "company": "IEEE - YTU Student Branch",
+      "location": "Istanbul, Turkey",
+      "date": "Jul 2023 – Jun 2024",
+      "type": "Volunteer",
+      "details": [
+        "Supervised organizational activities and strategic planning.",
+        "Ensured compliance with IEEE standards and regulations."
+      ]
+    },
+    {
+      "role": "Cashier",
+      "company": "Migros Ticaret",
+      "location": "Istanbul, Turkey",
+      "date": "Jul 2023 – Sep 2023",
+      "type": "Full-time",
+      "details": [
+        "Point-of-sale operations and customer service."
+      ]
+    },
+    {
+      "role": "Financial Director",
+      "company": "IEEE - YTU Student Branch",
+      "location": "Istanbul, Turkey", 
+      "date": "Jul 2022 – Jul 2023",
+      "type": "Volunteer",
+      "details": [
+        "Managed organizational budget and financial planning.",
+        "Oversaw financial operations and reporting."
+      ]
+    },
+    {
+      "role": "Global Member",
+      "company": "IEEE",
+      "location": "Global",
+      "date": "Jul 2022 – Dec 2023", 
+      "type": "Membership",
+      "details": [
+        "Active participation in IEEE professional development programs."
+      ]
+    },
+    {
+      "role": "Trainee",
+      "company": "Yetkin Gençler",
+      "location": "Istanbul, Turkey",
+      "date": "Feb 2022 – Jan 2023",
+      "type": "Training Program",
+      "details": [
+        "Participated in youth development and leadership training programs."
+      ]
+    },
+    {
+      "role": "IEEE Member",
+      "company": "IEEE - YTU Student Branch", 
+      "location": "Istanbul, Turkey",
+      "date": "Oct 2021 – Jul 2022",
+      "type": "Volunteer",
+      "details": [
+        "Active member participating in technical events and workshops."
+      ]
+    },
+    {
+      "role": "Part Time Sales Consultant",
+      "company": "Mavi",
+      "location": "Çorlu, Tekirdağ, Turkey",
+      "date": "Jul 2021 – Oct 2021", 
+      "type": "Seasonal",
+      "details": [
+        "Customer service and sales consulting in retail environment."
       ]
     }
   ],
