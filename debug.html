@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: white;
+        }
+        .debug-box {
+            background: #333;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #555;
+        }
+        .success { border-color: #4CAF50; background: #1a3a1a; }
+        .error { border-color: #f44336; background: #3a1a1a; }
+        .warning { border-color: #ff9800; background: #3a2a1a; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Portfolio Debug Page</h1>
+    
+    <div class="debug-box success">
+        <h3>✅ HTML Loaded</h3>
+        <p>This page is rendering correctly</p>
+    </div>
+    
+    <div class="debug-box" id="css-test">
+        <h3>🔄 CSS Test</h3>
+        <p id="css-result">Testing CSS loading...</p>
+    </div>
+    
+    <div class="debug-box" id="js-test">
+        <h3>🔄 JavaScript Test</h3>
+        <p id="js-result">Testing JavaScript...</p>
+    </div>
+    
+    <div class="debug-box" id="json-test">
+        <h3>🔄 JSON Test</h3>
+        <p id="json-result">Testing JSON loading...</p>
+    </div>
+    
+    <div class="debug-box">
+        <h3>📄 Files Check</h3>
+        <p><a href="/" style="color: #4CAF50;">Main Portfolio (index.html)</a></p>
+        <p><a href="/style.css" style="color: #4CAF50;">CSS File</a></p>
+        <p><a href="/script.js" style="color: #4CAF50;">JavaScript File</a></p>
+        <p><a href="/data.json" style="color: #4CAF50;">JSON Data</a></p>
+    </div>
+
+    <script>
+        console.log('Debug script running');
+        
+        // Test JavaScript
+        document.getElementById('js-result').textContent = '✅ JavaScript is working!';
+        document.getElementById('js-test').className = 'debug-box success';
+        
+        // Test CSS
+        const cssTest = document.getElementById('css-test');
+        const computedStyle = window.getComputedStyle(cssTest);
+        if (computedStyle.backgroundColor !== 'rgba(0, 0, 0, 0)') {
+            document.getElementById('css-result').textContent = '✅ CSS is loading correctly!';
+            cssTest.className = 'debug-box success';
+        } else {
+            document.getElementById('css-result').textContent = '❌ CSS not loading properly';
+            cssTest.className = 'debug-box error';
+        }
+        
+        // Test JSON
+        fetch('./data.json')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('json-result').textContent = 
+                    `✅ JSON loaded! Found ${Object.keys(data).length} main sections`;
+                document.getElementById('json-test').className = 'debug-box success';
+            })
+            .catch(error => {
+                document.getElementById('json-result').textContent = 
+                    `❌ JSON Error: ${error.message}`;
+                document.getElementById('json-test').className = 'debug-box error';
+            });
+    </script>
+</body>
+</html>

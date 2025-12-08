@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f0f0f0;
+            color: #333;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Test Page</h1>
+    
+    <div class="test-section">
+        <h2>Static Content Test</h2>
+        <p>This text should be visible immediately.</p>
+        <div id="hero-name">Loading name...</div>
+        <div id="hero-title">Loading title...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Dynamic Content Test</h2>
+        <div id="test-data">Loading data...</div>
+    </div>
+    
+    <script>
+        console.log('Minimal test script loaded');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded');
+            
+            // Test basic DOM manipulation
+            const testDiv = document.getElementById('test-data');
+            if (testDiv) {
+                testDiv.innerHTML = '<p style="color: green;">✓ DOM manipulation working!</p>';
+            }
+            
+            // Test fetch
+            fetch('./data.json')
+                .then(response => {
+                    console.log('Fetch response:', response);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Data loaded successfully:', data);
+                    
+                    // Update hero elements
+                    const heroName = document.getElementById('hero-name');
+                    const heroTitle = document.getElementById('hero-title');
+                    
+                    if (heroName && data.personal) {
+                        heroName.textContent = data.personal.name;
+                        heroName.style.color = 'green';
+                    }
+                    
+                    if (heroTitle && data.personal) {
+                        heroTitle.textContent = data.personal.title;
+                        heroTitle.style.color = 'green';
+                    }
+                    
+                    const testDiv = document.getElementById('test-data');
+                    if (testDiv) {
+                        testDiv.innerHTML += '<p style="color: blue;">✓ Data fetch working!</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading data:', error);
+                    const testDiv = document.getElementById('test-data');
+                    if (testDiv) {
+                        testDiv.innerHTML += '<p style="color: red;">✗ Data fetch failed: ' + error.message + '</p>';
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
