@@ -54,32 +54,87 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Load and populate data from JSON
-async function loadPortfolioData() {
-  try {
-    const response = await fetch('./data.json');
-    const data = await response.json();
-    
-    console.log('Loading portfolio data...', data);
-    
-    populatePersonalInfo(data.personal);
-    populateAbout(data.personal);
-    populateExperience(data.experience);
-    populateEducation(data.education);
-    populateProjects(data.projects);
-    populateSkills(data.skills);
-    populateResearchInterests(data.skills);
-    populateCertificates(data.certificates);
-    populateContactLinks(data.links);
-    
-    console.log('Portfolio data loaded successfully!');
-    
-  } catch (error) {
-    console.error('Error loading portfolio data:', error);
-    // Fallback content if JSON fails
-    document.getElementById('hero-name').textContent = 'Dicle Ceylan';
-    document.getElementById('hero-title').textContent = 'Software Developer';
+// Simple data loading
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, loading portfolio data...');
+  
+  fetch('./data.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Data loaded:', data);
+      updatePortfolioContent(data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+});
+
+function updatePortfolioContent(data) {
+  // Update hero
+  const heroName = document.getElementById('hero-name');
+  const heroTitle = document.getElementById('hero-title');
+  const heroSummary = document.getElementById('hero-summary');
+  
+  if (heroName) heroName.textContent = data.personal.name;
+  if (heroTitle) heroTitle.textContent = data.personal.title;
+  if (heroSummary) heroSummary.textContent = data.personal.summary;
+  
+  // Update experience
+  const timeline = document.getElementById('experience-timeline');
+  if (timeline) {
+    timeline.innerHTML = '';
+    data.experience.slice(0, 5).forEach(exp => {
+      const item = document.createElement('article');
+      item.className = 'timeline-item';
+      item.innerHTML = `
+        <div class="timeline-meta">
+          <span class="timeline-role">${exp.role}</span>
+          <span class="timeline-company">${exp.company}</span>
+          <span class="timeline-time">${exp.date}</span>
+        </div>
+        <p><strong>${exp.location}</strong></p>
+        <ul>${exp.details.map(d => `<li>${d}</li>`).join('')}</ul>
+      `;
+      timeline.appendChild(item);
+    });
   }
+  
+  // Update projects
+  const projects = document.getElementById('projects-container');
+  if (projects) {
+    projects.innerHTML = '';
+    data.projects.forEach(proj => {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <h3>${proj.name}</h3>
+        <p><strong>${proj.org}</strong> • ${proj.date}</p>
+        <ul class="card-list">${proj.details.map(d => `<li>${d}</li>`).join('')}</ul>
+        <div class="card-tags">
+          <span class="pill pill-small">${proj.org}</span>
+        </div>
+      `;
+      projects.appendChild(card);
+    });
+  }
+  
+  // Update contact
+  const contact = document.getElementById('contact-links');
+  if (contact) {
+    contact.innerHTML = `
+      <a href="${data.links.email}" class="btn primary">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a href="${data.links.linkedin}" target="_blank" class="btn ghost">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="${data.links.github}" target="_blank" class="btn ghost">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    `;
+  }
+  
+  console.log('Portfolio updated successfully!');
 }
 
 function populatePersonalInfo(personal) {
