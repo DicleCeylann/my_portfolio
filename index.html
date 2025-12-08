@@ -2,7 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" c      <div class="hero-content">
+        <p class="hero-kicker">Hi, I'm</p>
+        <h1 id="hero-name">Loading...<        <div>
+          <h3>Programs & Certificates</h3>
+          <ul class="bullet-list" id="certificates-list">
+            <li>Loading certificates...</li>
+          </ul>
+        </div>     <h2 id="hero-title">Loading...</h2>
+        <p class="hero-text" id="hero-summary">
+          Loading profile information...
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#contact" class="btn ghost">Let's Work Together</a>
+        </div>
+
+        <div class="hero-meta">
+          <span id="hero-location"><i class="fas fa-location-dot"></i> Loading...</span>
+          <span id="hero-skills"><i class="fas fa-code"></i> Loading...</span>
+        </div>
+      </div>-width, initial-scale=1.0" />
   <title>Dicle Ceylan | Portfolio</title>
   <meta name="description" content="Portfolio of Dicle Ceyla    <!-- Education -->
     <section id="education" class="section">
@@ -113,18 +134,14 @@
       <div class="hero-side">
         <div class="hero-card">
           <h3>Currently</h3>
-          <ul>
-            <li>🎓 BSc Statistics @ Yıldız Technical University</li>
-            <li>✈️ Jr. Officer @ Turkish Airlines – Alliances & Analytics</li>
-            <li>🔐 Research Assistant – Local Differential Privacy</li>
+          <ul id="hero-currently">
+            <li>Loading current positions...</li>
           </ul>
         </div>
         <div class="hero-card">
           <h3>Focus Areas</h3>
-          <ul>
-            <li>• Cybersecurity & Local DP</li>
-            <li>• Aviation optimization tools</li>
-            <li>• Data products & dashboards</li>
+          <ul id="hero-focus">
+            <li>Loading focus areas...</li>
           </ul>
         </div>
       </div>
@@ -137,33 +154,13 @@
         <p>Who I am and what I like to build.</p>
       </div>
       <div class="section-body grid-2">
-        <div>
-          <p>
-            I'm a <strong>Software Engineering</strong> student specializing in <strong>privacy engineering</strong> and 
-            <strong>cybersecurity</strong>. Currently pursuing my B.Sc. in Statistics at Yıldız Technical University 
-            with a 3.46/4.00 GPA (Top 3%), and accepted for M.Sc. in Computer Science at Koç University with full scholarship.
-          </p>
-          <p>
-            My experience spans <strong>software development</strong> at Turkish Airlines, <strong>PLDP research</strong> 
-            at Koç University, and <strong>cybersecurity training</strong> through SiberVatan. I build scalable solutions, 
-            automation tools, and privacy-preserving systems.
-          </p>
-          <p>
-            Long term, I want to work at the intersection of <strong>privacy engineering</strong>, <strong>AI security</strong>, 
-            and <strong>software engineering</strong> in innovative R&D environments that create real-world impact.
-          </p>
+        <div id="about-text">
+          <p>Loading about information...</p>
         </div>
         <div>
           <h3>Core Skills</h3>
-          <div class="pill-group">
-            <span class="pill">Python</span>
-            <span class="pill">Pandas · NumPy</span>
-            <span class="pill">PyQt6</span>
-            <span class="pill">SQL</span>
-            <span class="pill">Data Privacy (LDP/PLDP)</span>
-            <span class="pill">Cybersecurity Fundamentals</span>
-            <span class="pill">Git · GitHub</span>
-            <span class="pill">Reporting & LaTeX</span>
+          <div class="pill-group" id="skills-container">
+            <span class="pill">Loading skills...</span>
           </div>
         </div>
       </div>
@@ -175,50 +172,10 @@
         <h2>Experience</h2>
         <p>What I’ve been working on recently.</p>
       </div>
-      <div class="timeline">
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <span class="timeline-role">Junior Officer – International Relations & Alliances</span>
-            <span class="timeline-company">Turkish Airlines</span>
-            <span class="timeline-time">2024 – Present</span>
-          </div>
-          <p>
-            Building <strong>analytics tools</strong> and decision-support systems for codeshare and alliances:
-          </p>
-          <ul>
-            <li>Developed an <strong>O&D calculator</strong> and <strong>AHP–TOPSIS codeshare selection tool</strong> with PyQt6.</li>
-            <li>Automated manual analyses into repeatable, user-friendly desktop apps.</li>
-            <li>Worked closely with business teams to translate real needs into tools.</li>
-          </ul>
-        </article>
-
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <span class="timeline-role">Undergraduate Research Assistant – PLDP</span>
-            <span class="timeline-company">Koç University</span>
-            <span class="timeline-time">2024 – Present</span>
-          </div>
-          <p>
-            Collaborating on <strong>Personalized Local Differential Privacy</strong> and post-processing evaluation.
-          </p>
-          <ul>
-            <li>Benchmarking post-processing methods (Norm-Sub / Norm-Mul / Cut, etc.).</li>
-            <li>Working towards a <strong>conference publication</strong> in security & privacy.</li>
-            <li>Implementing experiments, visualizations, and reproducible pipelines.</li>
-          </ul>
-        </article>
-
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <span class="timeline-role">IT Intern</span>
-            <span class="timeline-company">VBT Software</span>
-            <span class="timeline-time">2023</span>
-          </div>
-          <p>
-            Worked on backend services using <strong>SQL Server, C#, REST APIs</strong>, and
-            <strong>JWT authentication</strong> for enterprise applications.
-          </p>
-        </article>
+      <div class="timeline" id="experience-timeline">
+        <div class="timeline-item">
+          <p>Loading experience...</p>
+        </div>
       </div>
     </section>
 
@@ -228,57 +185,10 @@
         <h2>Selected Projects</h2>
         <p>Some things I’ve built and shipped.</p>
       </div>
-      <div class="cards">
-        <article class="card">
-          <h3>Wave Visualization & O&D Calculator</h3>
-          <p>
-            A <strong>PyQt6</strong> desktop tool that visualizes hub bank structures (waves) and calculates
-            <strong>O&D connectivity</strong> for Turkish Airlines using OAG capacity data.
-          </p>
-          <ul class="card-list">
-            <li>Excel import/export, custom plotting, and mapping of regions & colors.</li>
-            <li>Designed for non-technical users in alliances & network planning.</li>
-          </ul>
-          <div class="card-tags">
-            <span class="pill pill-small">Python</span>
-            <span class="pill pill-small">PyQt6</span>
-            <span class="pill pill-small">Matplotlib</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>AHP–TOPSIS Codeshare Decision Tool</h3>
-          <p>
-            Decision-support app for <strong>codeshare point selection</strong>, combining
-            <strong>AHP</strong> for criteria weights and <strong>TOPSIS</strong> for ranking alternatives.
-          </p>
-          <ul class="card-list">
-            <li>Interactive GUI to load Excel data, set pairwise matrices, and export results.</li>
-            <li>Gave management a transparent, repeatable decision pipeline.</li>
-          </ul>
-          <div class="card-tags">
-            <span class="pill pill-small">Multi-criteria decision making</span>
-            <span class="pill pill-small">PyQt6</span>
-            <span class="pill pill-small">Pandas</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>PLDP Post-Processing Benchmark</h3>
-          <p>
-            Experimental framework for evaluating <strong>post-processing strategies</strong> under local
-            differential privacy, comparing utility and privacy guarantees.
-          </p>
-          <ul class="card-list">
-            <li>Implements multiple mechanisms and analysis metrics.</li>
-            <li>Supports reproducible experiments for future publications.</li>
-          </ul>
-          <div class="card-tags">
-            <span class="pill pill-small">Local DP</span>
-            <span class="pill pill-small">Python</span>
-            <span class="pill pill-small">Research</span>
-          </div>
-        </article>
+      <div class="cards" id="projects-container">
+        <div class="card">
+          <h3>Loading projects...</h3>
+        </div>
       </div>
     </section>
 
@@ -291,11 +201,8 @@
       <div class="section-body grid-2">
         <div>
           <h3>Research Interests</h3>
-          <ul class="bullet-list">
-            <li>Local & personalized differential privacy</li>
-            <li>Security engineering & cyber ranges</li>
-            <li>Privacy-preserving data collection</li>
-            <li>Aviation analytics & optimization</li>
+          <ul class="bullet-list" id="research-interests">
+            <li>Loading research interests...</li>
           </ul>
         </div>
         <div>
@@ -320,15 +227,9 @@
           The best way to reach me is via <strong>email</strong> or <strong>LinkedIn</strong>. I’m happy to talk
           about cybersecurity, data privacy, aviation analytics, and cool research ideas.
         </p>
-        <div class="contact-links">
-          <a href="mailto:dicle.ceylan@example.com" class="btn primary">
-            <i class="fas fa-envelope"></i> Email
-          </a>
-          <a href="https://www.linkedin.com/in/dicle-ceylan" target="_blank" rel="noreferrer" class="btn ghost">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="https://github.com/dicleceylan" target="_blank" rel="noreferrer" class="btn ghost">
-            <i class="fab fa-github"></i> GitHub
+        <div class="contact-links" id="contact-links">
+          <a href="mailto:loading@example.com" class="btn primary">
+            <i class="fas fa-envelope"></i> Loading...
           </a>
         </div>
       </div>

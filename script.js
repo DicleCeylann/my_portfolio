@@ -60,34 +60,48 @@ async function loadPortfolioData() {
     const response = await fetch('./data.json');
     const data = await response.json();
     
+    console.log('Loading portfolio data...', data);
+    
     populatePersonalInfo(data.personal);
+    populateAbout(data.personal);
     populateExperience(data.experience);
     populateEducation(data.education);
     populateProjects(data.projects);
     populateSkills(data.skills);
+    populateResearchInterests(data.skills);
     populateCertificates(data.certificates);
     populateContactLinks(data.links);
     
+    console.log('Portfolio data loaded successfully!');
+    
   } catch (error) {
     console.error('Error loading portfolio data:', error);
+    // Fallback content if JSON fails
+    document.getElementById('hero-name').textContent = 'Dicle Ceylan';
+    document.getElementById('hero-title').textContent = 'Software Developer';
   }
 }
 
 function populatePersonalInfo(personal) {
   // Update hero section
-  const heroTitle = document.querySelector('.hero h1');
-  const heroSubtitle = document.querySelector('.hero h2');
-  const heroText = document.querySelector('.hero-text');
-  const locationSpan = document.querySelector('.hero-meta span:first-child');
+  const heroName = document.getElementById('hero-name');
+  const heroTitle = document.getElementById('hero-title');
+  const heroSummary = document.getElementById('hero-summary');
+  const heroLocation = document.getElementById('hero-location');
+  const heroSkills = document.getElementById('hero-skills');
   
-  if (heroTitle) heroTitle.textContent = personal.name;
-  if (heroSubtitle) heroSubtitle.textContent = personal.title;
-  if (heroText) heroText.innerHTML = `<strong>${personal.summary}</strong>`;
-  if (locationSpan) locationSpan.innerHTML = `<i class="fas fa-location-dot"></i> ${personal.location}`;
+  if (heroName) heroName.textContent = personal.name;
+  if (heroTitle) heroTitle.textContent = personal.title;
+  if (heroSummary) heroSummary.innerHTML = personal.summary;
+  if (heroLocation) heroLocation.innerHTML = `<i class="fas fa-location-dot"></i> ${personal.location}`;
+  if (heroSkills) heroSkills.innerHTML = `<i class="fas fa-code"></i> Python · C++ · SQL · REST APIs · Privacy Engineering`;
+  
+  // Update page title
+  document.title = `${personal.name} | Portfolio`;
 }
 
 function populateExperience(experiences) {
-  const timeline = document.querySelector('.timeline');
+  const timeline = document.getElementById('experience-timeline');
   if (!timeline) return;
   
   timeline.innerHTML = '';
@@ -113,7 +127,7 @@ function populateExperience(experiences) {
 }
 
 function populateProjects(projects) {
-  const cardsContainer = document.querySelector('.cards');
+  const cardsContainer = document.getElementById('projects-container');
   if (!cardsContainer) return;
   
   cardsContainer.innerHTML = '';
@@ -122,6 +136,18 @@ function populateProjects(projects) {
     const card = document.createElement('article');
     card.className = 'card';
     
+    // Determine appropriate tags based on project content
+    let tags = [project.org];
+    if (project.name.includes('PLDP') || project.name.includes('PersonalizedLDP')) {
+      tags.push('Privacy Engineering', 'Research');
+    } else if (project.name.includes('SecureIoT')) {
+      tags.push('Cybersecurity', 'IoT');
+    } else if (project.name.includes('XAI')) {
+      tags.push('Explainable AI', 'Security');
+    } else {
+      tags.push('Software Development', 'Analytics');
+    }
+    
     card.innerHTML = `
       <h3>${project.name}</h3>
       <p><strong>${project.org}</strong> • ${project.date}</p>
@@ -129,8 +155,7 @@ function populateProjects(projects) {
         ${project.details.map(detail => `<li>${detail}</li>`).join('')}
       </ul>
       <div class="card-tags">
-        <span class="pill pill-small">${project.org}</span>
-        <span class="pill pill-small">${project.date}</span>
+        ${tags.map(tag => `<span class="pill pill-small">${tag}</span>`).join('')}
       </div>
     `;
     
@@ -140,7 +165,7 @@ function populateProjects(projects) {
 
 function populateSkills(skills) {
   // Find about section skills
-  const skillsContainer = document.querySelector('.pill-group');
+  const skillsContainer = document.getElementById('skills-container');
   if (!skillsContainer) return;
   
   skillsContainer.innerHTML = '';
@@ -148,9 +173,9 @@ function populateSkills(skills) {
   // Combine all skills into one array
   const allSkills = [
     ...skills.languages,
-    ...skills.core.slice(0, 3), // Take first 3 core skills
-    ...skills.tools.slice(0, 3), // Take first 3 tools
-    ...skills.focusAreas.slice(0, 2) // Take first 2 focus areas
+    ...skills.core.slice(0, 4), // Take first 4 core skills
+    ...skills.tools.slice(0, 4), // Take first 4 tools
+    ...skills.focusAreas.slice(0, 3) // Take first 3 focus areas
   ];
   
   allSkills.forEach(skill => {
@@ -163,8 +188,10 @@ function populateSkills(skills) {
 
 function populateEducation(education) {
   // Update current education in hero cards
-  const currentlyCard = document.querySelector('.hero-card:first-child ul');
-  if (currentlyCard) {
+  const currentlyCard = document.getElementById('hero-currently');
+  const focusCard = document.getElementById('hero-focus');
+  
+  if (currentlyCard && education.length >= 2) {
     const currentEd = education[0]; // Current education
     const futureEd = education[1]; // Future education
     
@@ -175,20 +202,66 @@ function populateEducation(education) {
       <li>🎯 ${futureEd.degree} @ ${futureEd.school} (${futureEd.scholarship})</li>
     `;
   }
+  
+  if (focusCard) {
+    focusCard.innerHTML = `
+      <li>• Software Engineering & Privacy</li>
+      <li>• PLDP & Cybersecurity Research</li>
+      <li>• Automation & Analytics Tools</li>
+    `;
+  }
+}
+
+function populateAbout(personal) {
+  const aboutText = document.getElementById('about-text');
+  if (aboutText) {
+    aboutText.innerHTML = `
+      <p>
+        I'm a <strong>Software Engineering</strong> student specializing in <strong>privacy engineering</strong> and 
+        <strong>cybersecurity</strong>. Currently pursuing my B.Sc. in Statistics at Yıldız Technical University 
+        with a 3.46/4.00 GPA (Top 3%), and accepted for M.Sc. in Computer Science at Koç University with full scholarship.
+      </p>
+      <p>
+        My experience spans <strong>software development</strong> at Turkish Airlines, <strong>PLDP research</strong> 
+        at Koç University, and <strong>cybersecurity training</strong> through SiberVatan. I build scalable solutions, 
+        automation tools, and privacy-preserving systems.
+      </p>
+      <p>
+        ${personal.summary}
+      </p>
+    `;
+  }
 }
 
 function populateCertificates(certificates) {
   // Update research section certificates
-  const certList = document.querySelector('.section-body.grid-2 div:last-child ul');
+  const certList = document.getElementById('certificates-list');
   if (certList) {
-    certList.innerHTML = certificates.slice(0, 4).map(cert => 
+    certList.innerHTML = certificates.slice(0, 5).map(cert => 
       `<li>${cert.title} (${cert.year})</li>`
     ).join('');
   }
 }
 
+function populateResearchInterests(skills) {
+  const researchList = document.getElementById('research-interests');
+  if (researchList) {
+    const interests = [
+      'Local & Personalized Differential Privacy (PLDP)',
+      'Privacy Engineering & Data Protection',
+      'Cybersecurity & Security Engineering',
+      'Software Engineering & Automation Tools',
+      'Explainable AI & Machine Learning Security'
+    ];
+    
+    researchList.innerHTML = interests.map(interest => 
+      `<li>${interest}</li>`
+    ).join('');
+  }
+}
+
 function populateContactLinks(links) {
-  const contactLinks = document.querySelector('.contact-links');
+  const contactLinks = document.getElementById('contact-links');
   if (!contactLinks) return;
   
   contactLinks.innerHTML = `
