@@ -16,20 +16,35 @@ if (navToggle && navRight) {
 const themeToggle = document.getElementById("theme-toggle");
 const root = document.documentElement;
 
+// Load saved theme on page load
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  root.setAttribute("data-theme", savedTheme);
+if (savedTheme === "light") {
+  root.setAttribute("data-theme", "light");
+  if (themeToggle) {
+    themeToggle.querySelector("i").className = "fas fa-sun";
+  }
+} else {
+  root.removeAttribute("data-theme"); // Default dark theme
+  if (themeToggle) {
+    themeToggle.querySelector("i").className = "fas fa-moon";
+  }
 }
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
-    const current = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-    if (current === "dark") {
+    const currentTheme = root.getAttribute("data-theme");
+    const icon = themeToggle.querySelector("i");
+    
+    if (currentTheme === "light") {
+      // Switch to dark
       root.removeAttribute("data-theme");
       localStorage.setItem("theme", "dark");
+      icon.className = "fas fa-moon";
     } else {
+      // Switch to light
       root.setAttribute("data-theme", "light");
       localStorage.setItem("theme", "light");
+      icon.className = "fas fa-sun";
     }
   });
 }

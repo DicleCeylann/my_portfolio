@@ -40,6 +40,12 @@ body {
   background: radial-gradient(circle at top, #0b1120 0, var(--bg) 45%, #000 100%);
   color: var(--fg);
   min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light theme body background */
+[data-theme="light"] body {
+  background: radial-gradient(circle at top, #f0f9ff 0, var(--bg) 45%, #e5e7eb 100%);
 }
 
 /* Navbar */
@@ -55,6 +61,12 @@ body {
   backdrop-filter: blur(18px);
   background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.96));
   border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.3s ease;
+}
+
+/* Light theme navbar */
+[data-theme="light"] .navbar {
+  background: radial-gradient(circle at top, rgba(249, 250, 251, 0.95), rgba(255, 255, 255, 0.96));
 }
 
 .logo {
@@ -176,6 +188,12 @@ main {
   padding: 1.1rem 1.2rem;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Light theme hero card */
+[data-theme="light"] .hero-card {
+  background: radial-gradient(circle at top left, #f8fafc 0, var(--bg-card) 45%);
 }
 
 .hero-card h3 {
