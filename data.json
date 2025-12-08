@@ -1,12 +1,12 @@
 {
   "personal": {
     "name": "Dicle Ceylan",
-    "title": "Software Engineering Intern Candidate • Software Developer • Privacy & AI Researcher",
+    "title": "Statistics Student • Software Developer • Privacy & Data Science Researcher",
     "email": "ceylandiclee@gmail.com",
     "location": "Istanbul, Turkey",
     "linkedin": "https://linkedin.com/in/dicle-ceylan",
     "github": "https://github.com/DicleCeylann",
-    "summary": "Software Engineering Intern with experience in developing scalable software solutions and automation tools. Proficient in Python, C++, SQL, and REST API design. Skilled in cloud platforms, automation, cyber security fundamentals, and privacy engineering (PLDP)."
+    "summary": "Statistics student with experience in software development, data analysis, and privacy engineering. Proficient in Python, R, SQL, and statistical computing with a focus on PLDP research and automation tools."
   },
 
   "links": {
@@ -214,30 +214,42 @@
   ],
 
   "skills": {
-    "languages": ["Python", "C++", "SQL", "R"],
+    "languages": ["Python", "R", "C++", "SQL", "JavaScript", "HTML/CSS"],
+    "statistical": [
+      "Statistical Analysis",
+      "Data Science",
+      "Statistical Computing",
+      "Hypothesis Testing",
+      "Regression Analysis",
+      "Time Series Analysis"
+    ],
     "core": [
       "Object-Oriented Programming (OOP)",
       "Data Structures & Algorithms",
-      "Debugging",
+      "Machine Learning",
       "API Design & RESTful Services",
-      "Problem Solving",
+      "Database Design",
       "Version Control (Git/GitHub)"
     ],
     "tools": [
-      "SQL Server",
+      "Pandas/NumPy",
       "Scikit-learn",
+      "PyQt6",
+      "SQL Server",
+      "Redis",
       "Streamlit",
       "PowerBI",
-      "PyQt6",
-      "Linux CLI",
-      "Docker"
+      "BMC Helix Dashboards",
+      "Docker",
+      "Linux CLI"
     ],
     "focusAreas": [
-      "Software Engineering",
+      "Statistical Computing",
       "Privacy Engineering",
       "Local Differential Privacy (PLDP)",
-      "Explainable AI (SHAP, LIME)",
-      "Machine Learning Pipelines"
+      "Data Analysis & Visualization",
+      "Software Development",
+      "Business Analytics"
     ]
   },
 

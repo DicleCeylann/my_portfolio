@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background: #2a2a2a;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .section {
+            background: #2a2a2a;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+        }
+        .loading {
+            opacity: 0.7;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1 id="name">Dicle Ceylan</h1>
+        <h2 id="title">Software Engineering Intern Candidate</h2>
+        <p id="summary">Loading profile...</p>
+    </div>
+    
+    <div class="section">
+        <h3>Experience</h3>
+        <div id="experience-content">
+            <p class="loading">Loading experience...</p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h3>Projects</h3>
+        <div id="projects-content">
+            <p class="loading">Loading projects...</p>
+        </div>
+    </div>
+    
+    <script>
+        console.log('Loading test page...');
+        
+        // Test fetch
+        fetch('./data.json')
+            .then(response => {
+                console.log('Response received:', response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data loaded successfully:', data);
+                
+                // Update content
+                document.getElementById('name').textContent = data.personal.name;
+                document.getElementById('title').textContent = data.personal.title;
+                document.getElementById('summary').textContent = data.personal.summary;
+                
+                // Update experience
+                const experienceDiv = document.getElementById('experience-content');
+                experienceDiv.innerHTML = '';
+                data.experience.slice(0, 3).forEach(exp => {
+                    const div = document.createElement('div');
+                    div.innerHTML = `
+                        <h4>${exp.role} - ${exp.company}</h4>
+                        <p><strong>${exp.date}</strong> | ${exp.location}</p>
+                        <ul>${exp.details.map(d => `<li>${d}</li>`).join('')}</ul>
+                    `;
+                    div.style.marginBottom = '1rem';
+                    div.style.padding = '1rem';
+                    div.style.background = '#3a3a3a';
+                    div.style.borderRadius = '5px';
+                    experienceDiv.appendChild(div);
+                });
+                
+                // Update projects
+                const projectsDiv = document.getElementById('projects-content');
+                projectsDiv.innerHTML = '';
+                data.projects.forEach(proj => {
+                    const div = document.createElement('div');
+                    div.innerHTML = `
+                        <h4>${proj.name}</h4>
+                        <p><strong>${proj.org}</strong> - ${proj.date}</p>
+                        <ul>${proj.details.map(d => `<li>${d}</li>`).join('')}</ul>
+                    `;
+                    div.style.marginBottom = '1rem';
+                    div.style.padding = '1rem';
+                    div.style.background = '#3a3a3a';
+                    div.style.borderRadius = '5px';
+                    projectsDiv.appendChild(div);
+                });
+                
+                console.log('Test page updated successfully!');
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);
+                document.getElementById('summary').textContent = 'Error loading data: ' + error.message;
+            });
+    </script>
+</body>
+</html>
